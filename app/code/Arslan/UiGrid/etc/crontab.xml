@@ -5,4 +5,10 @@
 			<schedule>*/5 * * * *</schedule>
 		</job>
 	</group>
+
+	<group id="default">
+		<job instance="Arslan\UiGrid\Cron\ShowSale" method="execute" name="arslan_cron">
+			<schedule>*/5 * * * *</schedule>
+		</job>
+	</group>
 </config>

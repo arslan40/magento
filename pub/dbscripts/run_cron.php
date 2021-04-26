@@ -18,5 +18,5 @@ $state = $objectManager->get('Magento\Framework\App\State');
 $state->setAreaCode('frontend');
 
 
-$objectManager->create('\Arslan\UiGrid\Cron\AddItem')->execute();
+$objectManager->create('\Arslan\UiGrid\Cron\ShowSale')->execute();
 // die('~');

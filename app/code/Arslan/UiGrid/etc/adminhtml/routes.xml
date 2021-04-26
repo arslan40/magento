@@ -4,5 +4,10 @@
         <route id="users" frontName="users">
             <module name="Arslan_UiGrid"/>
         </route>
+
+        <route id="custommenu" frontName="custommenu">
+            <module name="Arslan_UiGrid"/>
+        </route>
+
     </router>
 </config>

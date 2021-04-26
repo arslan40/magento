@@ -7,11 +7,13 @@ class Product
     // public function afterGetPrice(\Magento\Catalog\Model\Product $subject, $result) {
     //     return $result*2;
     //  } 
-    public function afterGetName( \Magento\Catalog\Model\Product $subject, $result)
-    {
-        //  echo "<pre>";
-        // var_dump($result);
-        // echo "</pre>";
-     return "This is a After Plugin".$result;
-    } 
+    // public function afterGetName( \Magento\Catalog\Model\Product $subject, $result)
+    // {
+
+    //  return "This is a After Pluginssssssssssss".$result;
+    // } 
+    // public function beforeGetName( \Magento\Catalog\Model\Product $subject, $result)
+    // {
+    //  return "This is a Before Pluginssssssssssss".$result;
+    // } 
 }
