@@ -1,0 +1,36 @@
+<h2><strong>Config View</strong></h2>
+<?php
+$blockObj= $block->getLayout()->createBlock('Arslan\UiGrid\Block\ShowData');
+$info=$blockObj->show();
+?>
+<table class="table">
+  <thead>
+    <tr>
+    <th scope="col" class="col enable"><?php echo __('Enable DropDown') ?></th>
+    <th scope="col" class="col display_text"><?php echo __('Display text') ?></th>
+    <th scope="col" class="col textarea"><?php echo __('Text area') ?></th>
+    <th scope="col" class="col checkbox"><?php echo __('Checkbox') ?></th>
+    <th scope="col" class="col ranges"><?php echo __('Ranges') ?></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><?php echo $info[0]?></td>
+      <td><?php echo $info[1]?></td>
+      <td><?php echo $info[2]?></td>
+      <td><?php echo $info[3]?></td>
+      <?php $json=json_decode($info[5], true);?>
+    <?php 
+      foreach($json as $data){
+    ?>
+    <td><strong>Qty</strong><?php  echo "=>".$data['to_qty']; ?></td>
+    <td><strong>Price</strong><?php  echo "=>".$data['price']; ?></td>
+    <td><strong>Tax</strong><?php  echo "=>".$data['tax']; ?></td>    
+    <?php
+    }
+    ?>
+      
+    </tr>
+  </tbody>
+</table>

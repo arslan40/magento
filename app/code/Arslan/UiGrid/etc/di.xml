@@ -1,0 +1,32 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="arslan_uigrid_index_listing_data_source" xsi:type="string">Arslan\UiGrid\Model\ResourceModel\User\Collection</item>
+            </argument>
+        </arguments>
+    </type>`    
+    <virtualType name="Arslan\UiGrid\Model\ResourceModel\User\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">users</argument>
+            <argument name="resourceModel" xsi:type="string">Arslan\UiGrid\Model\ResourceModel\User</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Checkout\Model\Cart">
+        <plugin name="beforeAddtoCart" type="Arslan\UiGrid\Plugin\Cart" sortOrder="10" disabled="false"  />
+    </type>
+
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="afterProductName" type="Arslan\UiGrid\Plugin\Product" sortOrder="1" />
+   </type>
+
+   <!-- <type name="Magento\Catalog\Model\Product">
+        <plugin name="change_product" type="Arslan\UiGrid\Plugin\Product" sortOrder="1" />
+    </type> -->
+
+   <type name="Magento\Checkout\Model\Cart">
+    <plugin name="aroundAddtoCart" type="Arslan\UiGrid\Plugin\Cart" sortOrder="1" />
+</type>
+
+</config>
