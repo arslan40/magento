@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    <add id="Arslan_UiGrid::home" title="UiGrid" module="Arslan_UiGrid" sortOrder="1000" parent="Magento_Catalog::catalog_categories" resource="Magento_Catalog::categories" action="users/index/index"/>
+    <!-- <add id="Arslan_UiGrid::option" title="New Option UiGrid" module="Arslan_UiGrid" sortOrder="1000" resource="Magento_Backend::admin" action="users/index/index"/> -->
+    </menu>
+
+    <menu>
+        <add id="Arslan_UiGrid::menu" title="Custom Menu" module="Arslan_UiGrid" sortOrder="10" resource="Arslan_UiGrid::menu"/>
+        <add id="Arslan_UiGrid::view" title="View" module="Arslan_UiGrid" sortOrder="30" parent="Arslan_UiGrid::menu" action="custommenu/view/index" resource="Arslan_UiGrid::view"/>
+    </menu>
+
+
+ </config>
