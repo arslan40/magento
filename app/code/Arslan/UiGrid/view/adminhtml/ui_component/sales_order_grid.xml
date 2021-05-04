@@ -35,5 +35,15 @@
                 </item>
          </argument>
         </actionsColumn>
+
+        <column name="checkbox" class="Arslan\UiGrid\Ui\Component\Listing\Column\Mycolumn">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom Checkbox</item>
+                </item>
+            </argument>
+        </column>
+
     </columns>
 </listing>
