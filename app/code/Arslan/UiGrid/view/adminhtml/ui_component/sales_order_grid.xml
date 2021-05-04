@@ -1,5 +1,5 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-     <columns name="sales_order_columns">
+    <columns name="sales_order_columns">
         <column name="order_status" class="Arslan\UiGrid\Ui\Component\Listing\Column\Mycolumn">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -16,5 +16,24 @@
                 </item>
             </argument>
         </column>
+
+         <column name="oder_item" class="Arslan\UiGrid\Ui\Component\Listing\Column\Mycolumn">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">order item</item>
+                </item>
+            </argument>
+        </column>
+
+        <actionsColumn name="entity_id" class="Arslan\UiGrid\Ui\Component\Listing\Column\ViewAction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                <item name="viewUrlPath" xsi:type="string">arslan/uigrid/view</item>
+                <item name="urlEntityParamName" xsi:type="string">id</item>
+                </item>
+         </argument>
+        </actionsColumn>
     </columns>
 </listing>

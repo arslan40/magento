@@ -34,10 +34,22 @@ class Mycolumn extends Column
             {
                 $order  = $this->_orderRepository->get($item["entity_id"]);
                 $order_id = $order->getEntityId();
-            //   var_dump($this->getData('name'));
+                $orderItems = $order->getAllItems();
+                // $products = array();
+                $prices= array();
+
+                foreach ($orderItems as $index => $_item) {
+                    // $products[$index]=$_item->getName();
+                    $prices[$index]=$_item->getPrice();
+
+
+                }
+                // $item["oder_item"] = $products;
+                $item["oder_item"] = $prices;
                 $item["order_status"] = $order->getstate();
                 $item["telephone"] = $order->getShippingAddress()->gettelephone();
             }
+           
         }
         return $dataSource;
     }
