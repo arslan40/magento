@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <body>
+       <referenceContainer name="left">
+           <referenceBlock name="sales_order_tabs">
+               <action method="addTab">
+                   <argument name="name" xsi:type="string">custom_tab</argument>
+                   <argument name="block" xsi:type="string">Arslan\UiGrid\Block\Adminhtml\Order\View\Tab\CustomTab</argument>
+               </action>
+           </referenceBlock>
+       </referenceContainer>
+       <!-- <referenceBlock name="order_additional_info">
+            <block class="Arslan\UiGrid\Block\Adminhtml\Order\View\View" name="sales_custom_view" template="order/view/view.phtml" />
+        </referenceBlock> -->
+
+        <referenceBlock name="order_items">
+            <arguments>
+                <argument name="columns" xsi:type="array">
+                    <item name="weight" xsi:type="string" translate="true">Custom Category</item>
+                </argument>
+            </arguments>
+
+        <block class="Arslan\UiGrid\Block\Adminhtml\Order\View\View"
+            name="column_weight" template="Arslan_UiGrid::order/view/view.phtml" group="column"/>
+        </referenceBlock>
+        <referenceBlock name="default_order_items_renderer">
+            <arguments>
+                <argument name="columns" xsi:type="array">
+                    <item name="weight" xsi:type="string" translate="false">col-weight</item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
